@@ -3,6 +3,7 @@
 
 #include <PubSubClient.h>
 #include "credentials.h"  // Importuj dane uwierzytelniające
+#include "led.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -32,6 +33,8 @@ void saveTotalActiveMinutes() {
       if (result) {
         Serial.print("Zapisano totalActiveMinutes: ");
         Serial.println(totalActiveMinutes);
+        blinkBuiltinLED();
+        blinkLEDGPIO4();
       } else {
         Serial.println("Błąd publikacji na temat totalActiveMinutes.");
       }

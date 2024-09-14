@@ -33,8 +33,7 @@ void saveTotalActiveMinutes() {
       if (result) {
         Serial.print("Zapisano totalActiveMinutes: ");
         Serial.println(totalActiveMinutes);
-        blinkBuiltinLED();
-        blinkLEDGPIO4();
+        blinkLED();
       } else {
         Serial.println("Błąd publikacji na temat totalActiveMinutes.");
       }
